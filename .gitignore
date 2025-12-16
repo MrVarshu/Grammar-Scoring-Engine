@@ -36,8 +36,8 @@ venv.bak/
 .ipynb_checkpoints
 *.ipynb_checkpoints/
 
-# Data directories
-data/
+# Data directories - ignore all contents but keep folder structure
+data/*
 !data/.gitkeep
 *.wav
 *.mp3
@@ -46,8 +46,8 @@ data/
 *.m4a
 *.aac
 
-# Results and outputs
-results/
+# Results and outputs - ignore all contents but keep folder structure
+results/*
 !results/.gitkeep
 *.json
 *.csv
