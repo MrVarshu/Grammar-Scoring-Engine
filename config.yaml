@@ -1,0 +1,42 @@
+# Grammar Scoring Engine Configuration
+
+# Audio Processing Settings
+audio:
+  sample_rate: 16000
+  max_duration: 300  # seconds
+  supported_formats: ['.wav', '.mp3', '.flac', '.ogg', '.m4a']
+
+# Speech-to-Text Settings
+transcription:
+  model: "whisper"  # Options: whisper, google, sphinx
+  whisper_model_size: "base"  # Options: tiny, base, small, medium, large
+  language: "en"
+  device: "auto"  # Options: auto, cpu, cuda
+
+# Grammar Scoring Settings
+grammar:
+  # Grammar check tools
+  use_language_tool: true
+  language_tool_language: "en-US"
+  
+  # Scoring weights
+  weights:
+    grammar_errors: 0.40
+    sentence_structure: 0.20
+    vocabulary_richness: 0.20
+    readability: 0.20
+  
+  # Score ranges
+  score_ranges:
+    excellent: [90, 100]
+    good: [75, 90]
+    average: [60, 75]
+    poor: [40, 60]
+    very_poor: [0, 40]
+
+# Output Settings
+output:
+  results_dir: "./results"
+  save_transcriptions: true
+  save_detailed_reports: true
+  report_format: "json"  # Options: json, csv, txt
